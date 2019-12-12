@@ -5,38 +5,45 @@ using UnityEngine;
 public class PlaceTurret : MonoBehaviour
 {
     public GameObject TurretPrefab;
-    
-    GameObject TurretSocket;
+    public TurretSocketCollider TurretSocket;
+    GameObject Turret;
+    GameObject PermanentTurret;
+
+    public bool turretOn;
+    public bool permanentTurretOn;
     public float range = 10f;
-    
+
     void Update() {
 
+        //Raycast collider detector
         RaycastHit hit;
+        //Asign the rotation of the Camera to the RayCast
         Camera cam = GetComponentInChildren<Camera>();
         Ray rayDirection = new Ray(transform.position, transform.forward);
-
-        Debug.DrawRay(transform.position, cam.transform.forward * range);
+        Color RayColor = new Color(1, 0, 0, 1);
+        Debug.DrawRay(transform.position, cam.transform.forward * range, RayColor);
 
         if (Physics.Raycast(rayDirection, out hit, range)) {
-            if (hit.collider.gameObject == TurretSocket) {
-
-                GameObject Turret = Instantiate(TurretPrefab, TurretSocket.transform);
-
-                Debug.Log("RayCastTurret");
-                if (Input.GetKey(KeyCode.Mouse0)) {
-                    Debug.Log("OnClick");
+            if (hit.collider.gameObject == TurretSocket.TurretSocket) {
+                //Debug.Log("RayCastTurret");
+                if (!turretOn && !permanentTurretOn) {
+                    turretOn = true;
+                    Turret = Instantiate(TurretPrefab, new Vector3(TurretSocket.TurretSocket.transform.position.x, TurretSocket.TurretSocket.transform.position.y + 1,
+                    TurretSocket.TurretSocket.transform.position.z), new Quaternion(0, 0, 0, 0), TurretSocket.TurretSocket.transform);
+                }
+                if (Input.GetKey(KeyCode.Mouse0) && !permanentTurretOn) {
+                    permanentTurretOn = true;
+                    PermanentTurret = Instantiate(TurretPrefab, new Vector3(TurretSocket.TurretSocket.transform.position.x, TurretSocket.TurretSocket.transform.position.y + 1,
+                    TurretSocket.TurretSocket.transform.position.z), new Quaternion(0, 0, 0, 0), TurretSocket.TurretSocket.transform);
+                    //Debug.Log("OnClick");
                 }
             }
         }
-    }
-
-    private void OnTriggerStay(Collider other) {
-        Debug.Log("Trigger");
-        if (other.gameObject.tag == "TurretSocketTag") {
-            Debug.Log("Correct Trigger With TurretSocket");
+        else {
+            Destroy(Turret);
+            turretOn = false;
         }
     }
 
-    //TurretSocket = collision.gameObject;/*GameObject.FindGameObjectWithTag("TurretPlace");*/
 
 }
