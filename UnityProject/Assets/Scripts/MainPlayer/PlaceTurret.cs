@@ -14,12 +14,11 @@ public class PlaceTurret : MonoBehaviour
     public float range = 10f;
 
     void Update() {
-
         //Raycast collider detector
         RaycastHit hit;
         //Asign the rotation of the Camera to the RayCast
         Camera cam = GetComponentInChildren<Camera>();
-        Ray rayDirection = new Ray(transform.position, transform.forward);
+        Ray rayDirection = new Ray(transform.position, cam.transform.forward);
         Color RayColor = new Color(1, 0, 0, 1);
         Debug.DrawRay(transform.position, cam.transform.forward * range, RayColor);
 
@@ -28,22 +27,25 @@ public class PlaceTurret : MonoBehaviour
                 //Debug.Log("RayCastTurret");
                 if (!turretOn && !permanentTurretOn) {
                     turretOn = true;
-                    Turret = Instantiate(TurretPrefab, new Vector3(TurretSocket.TurretSocket.transform.position.x, TurretSocket.TurretSocket.transform.position.y + 1,
-                    TurretSocket.TurretSocket.transform.position.z), new Quaternion(0, 0, 0, 0), TurretSocket.TurretSocket.transform);
-                }
-                if (Input.GetKey(KeyCode.Mouse0) && !permanentTurretOn) {
+                    Vector3 TurretPosition = TurretSocket.TurretSocket.transform.position;
+                    //TurretSocket.TurretSocket.transform.position.x
+                    Turret = Instantiate(TurretPrefab, new Vector3(TurretPosition.x, TurretPosition.y + 1,
+                    TurretPosition.z), new Quaternion(0, 0, 0, 0), TurretSocket.TurretSocket.transform);
+                    Debug.Log("TemporallyTurret");
+                } if (Input.GetKey(KeyCode.Mouse0) && !permanentTurretOn) {
                     permanentTurretOn = true;
-                    PermanentTurret = Instantiate(TurretPrefab, new Vector3(TurretSocket.TurretSocket.transform.position.x, TurretSocket.TurretSocket.transform.position.y + 1,
-                    TurretSocket.TurretSocket.transform.position.z), new Quaternion(0, 0, 0, 0), TurretSocket.TurretSocket.transform);
-                    //Debug.Log("OnClick");
+                    Vector3 TurretPosition = TurretSocket.TurretSocket.transform.position;
+                    PermanentTurret = Instantiate(TurretPrefab, new Vector3(TurretPosition.x, TurretPosition.y + 1,
+                    TurretPosition.z), new Quaternion(0, 0, 0, 0), TurretPrefab.transform);
+                    Destroy(TurretSocket.TurretSocket);
+                    permanentTurretOn = false;
+                    turretOn = false;
+                    Debug.Log("PermanentTurret");
                 }
             }
-        }
-        else {
+        } else {
             Destroy(Turret);
             turretOn = false;
         }
     }
-
-
 }
