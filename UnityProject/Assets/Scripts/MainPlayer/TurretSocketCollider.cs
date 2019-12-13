@@ -7,10 +7,7 @@ public class TurretSocketCollider : MonoBehaviour {
     public GameObject TurretSocket;
 
     private void OnTriggerStay(Collider other) {
-        //Debug.Log("Trigger");
-        if (other.gameObject.tag == "TurretSocketTag") {
-            //Debug.Log("Correct Trigger With TurretSocket");
+        if (other.gameObject.tag == "TurretSocketTag") 
             TurretSocket = other.gameObject;
-        }
     }
 }

@@ -14,7 +14,6 @@ public class Rotation : MonoBehaviour {
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    
     void Update() {
 
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;

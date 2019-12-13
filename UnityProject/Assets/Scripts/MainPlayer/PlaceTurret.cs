@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlaceTurret : MonoBehaviour
 {
-    public GameObject TurretPrefab;
+    public GameObject TemporallyTurretPrefab;
+    public GameObject PermanentTurretPrefab;
+    public GameObject TurretsContainer;
     public TurretSocketCollider TurretSocket;
     GameObject Turret;
     GameObject PermanentTurret;
@@ -24,23 +26,27 @@ public class PlaceTurret : MonoBehaviour
 
         if (Physics.Raycast(rayDirection, out hit, range)) {
             if (hit.collider.gameObject == TurretSocket.TurretSocket) {
-                //Debug.Log("RayCastTurret");
                 if (!turretOn && !permanentTurretOn) {
                     turretOn = true;
                     Vector3 TurretPosition = TurretSocket.TurretSocket.transform.position;
-                    //TurretSocket.TurretSocket.transform.position.x
-                    Turret = Instantiate(TurretPrefab, new Vector3(TurretPosition.x, TurretPosition.y + 1,
-                    TurretPosition.z), new Quaternion(0, 0, 0, 0), TurretSocket.TurretSocket.transform);
-                    Debug.Log("TemporallyTurret");
+
+                    Turret = Instantiate(TemporallyTurretPrefab, new Vector3(TurretPosition.x, TurretPosition.y + 1,
+                    TurretPosition.z), Quaternion.identity, TurretSocket.TurretSocket.transform);
+
+                    Turret.SetActive(true);
+
                 } if (Input.GetKey(KeyCode.Mouse0) && !permanentTurretOn) {
                     permanentTurretOn = true;
                     Vector3 TurretPosition = TurretSocket.TurretSocket.transform.position;
-                    PermanentTurret = Instantiate(TurretPrefab, new Vector3(TurretPosition.x, TurretPosition.y + 1,
-                    TurretPosition.z), new Quaternion(0, 0, 0, 0), TurretPrefab.transform);
+
+                    PermanentTurret = Instantiate(PermanentTurretPrefab, new Vector3(TurretPosition.x, TurretPosition.y + 1,
+                    TurretPosition.z), Quaternion.identity, TurretsContainer.transform);
+
+                    PermanentTurret.SetActive(true);
+
                     Destroy(TurretSocket.TurretSocket);
                     permanentTurretOn = false;
                     turretOn = false;
-                    Debug.Log("PermanentTurret");
                 }
             }
         } else {
