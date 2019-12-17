@@ -9,6 +9,7 @@ public class TurretController : MonoBehaviour {
 
     public float reloadTime = 0.5f;
     float curTime;
+    int layer = 0;
 
     void Start(){
         curTime = reloadTime;    
@@ -20,7 +21,7 @@ public class TurretController : MonoBehaviour {
 
     private void OnTriggerStay(Collider other) {
         if (other.gameObject.tag == "Enemy") {
-            if (Enemy == null)
+            if (Enemy == null) 
                 Enemy = other.gameObject;
             if (Enemy != null) {
                     transform.LookAt(Enemy.transform);
@@ -31,5 +32,9 @@ public class TurretController : MonoBehaviour {
                 }
             }
         }
+    }
+
+    private void OnTriggerEnter(Collider other) {
+
     }
 }

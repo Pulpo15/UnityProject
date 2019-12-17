@@ -5,12 +5,16 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     TurretController Turret;
+    EnemyHealthController HealthSystemCast;
     GameObject Enemy;
     public float speed;
+    public float damage;
+    int layer = 0;
 
     void Start() {
         Turret = GetComponentInParent<TurretController>();
         Enemy = Turret.Enemy;
+        HealthSystemCast = Turret.Enemy.GetComponent<EnemyHealthController>();
     }
 
     void Update() {
@@ -22,8 +26,11 @@ public class BulletController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Enemy") {
-            Destroy(gameObject);
-            Destroy(other.gameObject);
+            if (layer > 0) {
+                Destroy(gameObject);
+                HealthSystemCast.HealthUpdate(damage);
+            }
+            layer++;
         }
     }
 }

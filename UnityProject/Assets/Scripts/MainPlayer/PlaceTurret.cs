@@ -30,7 +30,7 @@ public class PlaceTurret : MonoBehaviour
                     turretOn = true;
                     Vector3 TurretPosition = TurretSocket.TurretSocket.transform.position;
 
-                    Turret = Instantiate(TemporallyTurretPrefab, new Vector3(TurretPosition.x, TurretPosition.y + 1,
+                    Turret = Instantiate(TemporallyTurretPrefab, new Vector3(TurretPosition.x, TurretPosition.y + 1.8f,
                     TurretPosition.z), Quaternion.identity, TurretSocket.TurretSocket.transform);
 
                     Turret.SetActive(true);
@@ -39,7 +39,7 @@ public class PlaceTurret : MonoBehaviour
                     permanentTurretOn = true;
                     Vector3 TurretPosition = TurretSocket.TurretSocket.transform.position;
 
-                    PermanentTurret = Instantiate(PermanentTurretPrefab, new Vector3(TurretPosition.x, TurretPosition.y + 1,
+                    PermanentTurret = Instantiate(PermanentTurretPrefab, new Vector3(TurretPosition.x, TurretPosition.y + 1.8f,
                     TurretPosition.z), Quaternion.identity, TurretsContainer.transform);
 
                     PermanentTurret.SetActive(true);
