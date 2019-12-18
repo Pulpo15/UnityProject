@@ -6,9 +6,11 @@ using UnityEngine.UI;
 public class TurretHealthManager : MonoBehaviour
 {
     public Slider HealthBar;
+    public GameObject TurretSocket;
     public float totalHealth;
     float curHealth;
     public float armor;
+
 
     void Start() {
         HealthBar = GetComponentInChildren<Slider>();
@@ -18,6 +20,12 @@ public class TurretHealthManager : MonoBehaviour
     void Update(){
 
         if (curHealth <= 0) {
+            GameObject NewTurretSocket = Instantiate(TurretSocket, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y -1f, 
+            gameObject.transform.position.z), Quaternion.identity, gameObject.transform.parent);
+
+            NewTurretSocket.transform.localScale = gameObject.transform.localScale;
+            NewTurretSocket.SetActive(true);
+
             Destroy(gameObject);
         }
     }

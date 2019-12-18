@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class EnemyHealthController : MonoBehaviour {
 
     public Slider HealthBar;
+    public GameObject Coin;
     public float totalHealth;
     float curHealth;
     public float armor;
@@ -18,6 +19,7 @@ public class EnemyHealthController : MonoBehaviour {
     void Update(){
 
         if (curHealth <= 0) {
+            Instantiate(Coin, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

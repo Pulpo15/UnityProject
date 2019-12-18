@@ -13,6 +13,10 @@ public class EnemyController : MonoBehaviour {
     public float attackTime;
     float curAttackTime;
 
+    public float gravity = 9.8f;
+    public float fallVelocity = 0;
+
+    Vector3 move;
 
     void Start() {
         Enemy = GetComponent<CharacterController>();
@@ -27,7 +31,6 @@ public class EnemyController : MonoBehaviour {
 
     private void OnTriggerStay(Collider other) {
         if (other.gameObject.tag == "PermanentTurret") {
-            Debug.Log("EnemyTurretCollider");
             if (Turret == null) {
                 Turret = GameObject.Find("PermanentTurret(Clone)");
                 TurretHealthManagerCast = Turret.GetComponent<TurretHealthManager>();
@@ -36,7 +39,7 @@ public class EnemyController : MonoBehaviour {
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit) {
-        if (hit.gameObject.tag == "PermanentTurret") {
+        if (hit.gameObject.tag == "TurretWall") {
             if (curAttackTime <= 0) {
                 TurretHealthManagerCast.HealthUpdate(damage);
                 curAttackTime = attackTime;
@@ -54,4 +57,15 @@ public class EnemyController : MonoBehaviour {
             Enemy.Move(transform.forward * speed * Time.deltaTime);
         }
     }
+
+    //void SetGravity() {
+    //    if (Enemy.isGrounded) {
+    //        fallVelocity = -gravity * Time.deltaTime;
+    //        transform.position.y = fallVelocity;
+    //    }
+    //    else {
+    //        fallVelocity -= gravity * Time.deltaTime;
+    //        move.y = fallVelocity;
+    //    }
+    //}
 }
