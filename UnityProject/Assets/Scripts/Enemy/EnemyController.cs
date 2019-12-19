@@ -6,6 +6,7 @@ public class EnemyController : MonoBehaviour {
 
     GameObject Turret;
     GameObject Player;
+    GameObject Nexus;
     CharacterController Enemy;
     TurretHealthManager TurretHealthManagerCast;
     public float speed = 6f;
@@ -16,17 +17,19 @@ public class EnemyController : MonoBehaviour {
     public float gravity = 9.8f;
     public float fallVelocity = 0;
 
-    Vector3 move;
+    //Vector3 move;
 
     void Start() {
         Enemy = GetComponent<CharacterController>();
         Player = GameObject.FindGameObjectWithTag("Player");
+        Nexus = GameObject.FindGameObjectWithTag("Nexus");
         curAttackTime = attackTime;
     }
     
     void Update() {
         ObjectiveAssignement();
         curAttackTime -= Time.deltaTime;
+        transform.position = new Vector3(transform.position.x, 1, transform.position.z);
     }
 
     private void OnTriggerStay(Collider other) {
@@ -40,7 +43,7 @@ public class EnemyController : MonoBehaviour {
 
     private void OnControllerColliderHit(ControllerColliderHit hit) {
         if (hit.gameObject.tag == "TurretWall") {
-            if (curAttackTime <= 0) {
+            if (curAttackTime <= 0 && Turret != null) {
                 TurretHealthManagerCast.HealthUpdate(damage);
                 curAttackTime = attackTime;
             }
@@ -53,7 +56,7 @@ public class EnemyController : MonoBehaviour {
             Enemy.Move(transform.forward * speed * Time.deltaTime);
         }
         else if (Turret == null) {
-            transform.LookAt(Player.transform);
+            transform.LookAt(Nexus.transform);
             Enemy.Move(transform.forward * speed * Time.deltaTime);
         }
     }
@@ -61,7 +64,7 @@ public class EnemyController : MonoBehaviour {
     //void SetGravity() {
     //    if (Enemy.isGrounded) {
     //        fallVelocity = -gravity * Time.deltaTime;
-    //        transform.position.y = fallVelocity;
+    //        transform.forward = fallVelocity;
     //    }
     //    else {
     //        fallVelocity -= gravity * Time.deltaTime;

@@ -19,7 +19,9 @@ public class EnemyHealthController : MonoBehaviour {
     void Update(){
 
         if (curHealth <= 0) {
-            Instantiate(Coin, transform.position, Quaternion.identity);
+            GameObject NewCoin;
+            NewCoin = Instantiate(Coin, transform.position, Quaternion.identity);
+            NewCoin.SetActive(true);
             Destroy(gameObject);
         }
     }

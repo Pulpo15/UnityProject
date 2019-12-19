@@ -43,7 +43,7 @@ public class PlaceTurret : MonoBehaviour
 
                     Turret.SetActive(true);
 
-                    Economy.ShowCost(100);
+                    Economy.ShowCost(cost);
 
                 }
 
@@ -59,6 +59,7 @@ public class PlaceTurret : MonoBehaviour
                     PermanentTurret.SetActive(true);
 
                     Economy.RemoveMoney(cost);
+                    Economy.RemoveShowCost();
 
                     Destroy(TurretSocket.TurretSocket);
                     permanentTurretOn = false;

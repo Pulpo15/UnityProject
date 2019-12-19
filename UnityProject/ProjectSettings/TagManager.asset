@@ -9,6 +9,7 @@ TagManager:
   - PermanentTurret
   - Bullet
   - TurretWall
+  - Nexus
   layers:
   - Default
   - TransparentFX

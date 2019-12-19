@@ -22,9 +22,6 @@ public class Movement : MonoBehaviour {
         SetGravity();
 
         Player.Move(move * speed * Time.deltaTime);
-
-        Debug.Log(Player.isGrounded);
-
     }
 
     void SetGravity() {
