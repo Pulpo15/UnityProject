@@ -6,6 +6,7 @@ public class EnemySpawner : MonoBehaviour {
     public GameObject EnemyPrefab;
     public float time;
     float curTime;
+    public int enemysPerRound;
 
     void Start() {
         curTime = time;    
@@ -15,9 +16,10 @@ public class EnemySpawner : MonoBehaviour {
 
         curTime -= Time.deltaTime;
 
-        if (curTime <= 0) {
+        if (curTime <= 0 && enemysPerRound > 0) {
             SpawnEnemy();
             curTime = time;
+            enemysPerRound--;
         }
     }
 
