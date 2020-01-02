@@ -7,9 +7,11 @@ public class EnemyHealthController : MonoBehaviour {
 
     public Slider HealthBar;
     public GameObject Coin;
+    public Text RemainingEnemiesText;
     public float totalHealth;
     float curHealth;
     public float armor;
+    int remainignEnemies;
 
     void Start() {
         HealthBar = GetComponentInChildren<Slider>();
@@ -22,6 +24,9 @@ public class EnemyHealthController : MonoBehaviour {
             GameObject NewCoin;
             NewCoin = Instantiate(Coin, transform.position, Quaternion.identity);
             NewCoin.SetActive(true);
+            remainignEnemies = int.Parse(RemainingEnemiesText.text);
+            remainignEnemies--;
+            RemainingEnemiesText.text = remainignEnemies.ToString();
             Destroy(gameObject);
         }
     }

@@ -7,25 +7,33 @@ public class GunBulletSystem : MonoBehaviour
     public Rigidbody BulletRB;
     public float velocity;
     Vector3 Direction;
-
-
-    private void Awake() {
-    }
+    public float time;
+    float curTime;
+    public float damage;
 
     void Start() {
         BulletRB = GetComponent<Rigidbody>();
-        Direction = transform.forward;
-        transform.rotation = transform.parent.rotation;
+        Direction = GameObject.Find("Main Camera").transform.forward * velocity;
+        
         BulletRB.velocity = Direction;
+        Debug.Log(transform.parent.rotation);
         gameObject.transform.parent = null;
+        curTime = time;
     }
 
-    
     void Update() {
-        Debug.Log(Direction);
-        //if (gameObject.transform.parent != null) {
-        //    curTime -= Time.deltaTime;
-        //}
-        //if (gameObject.transform.parent != null && curTime <= 0)
+
+        curTime -= Time.deltaTime;
+
+        if (curTime <= 0)
+            Destroy(gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if (other.gameObject.tag == "Enemy") {
+            EnemyHealthController HealthSystemCast = other.gameObject.GetComponent<EnemyHealthController>();
+            HealthSystemCast.HealthUpdate(damage);
+            Destroy(gameObject);
+        }
     }
 }

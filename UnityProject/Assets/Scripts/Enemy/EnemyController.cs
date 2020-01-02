@@ -30,6 +30,7 @@ public class EnemyController : MonoBehaviour {
         ObjectiveAssignement();
         curAttackTime -= Time.deltaTime;
         transform.position = new Vector3(transform.position.x, 1, transform.position.z);
+        transform.rotation = new Quaternion(0, 0, 0, 0);
     }
 
     private void OnTriggerStay(Collider other) {

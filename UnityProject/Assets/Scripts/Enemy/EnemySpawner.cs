@@ -1,15 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemySpawner : MonoBehaviour {
     public GameObject EnemyPrefab;
     public float time;
     float curTime;
     public int enemysPerRound;
+    public Text RemainingEnemysText;
+    public GameObject Player;
 
     void Start() {
-        curTime = time;    
+        curTime = time;
+        RemainingEnemysText.text = enemysPerRound.ToString();
     }
 
     void Update() {
@@ -27,5 +31,6 @@ public class EnemySpawner : MonoBehaviour {
         GameObject Enemy;
         Enemy = Instantiate(EnemyPrefab,transform.position,Quaternion.identity);
         Enemy.SetActive(true);
+        Physics.IgnoreCollision(Enemy.GetComponent<Collider>(), Player.GetComponent<Collider>());
     }
 }
