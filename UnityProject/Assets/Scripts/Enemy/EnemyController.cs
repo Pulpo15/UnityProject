@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour {
     GameObject Turret;
     GameObject Player;
     GameObject Nexus;
+    NexusController NexusControllerCast;
     CharacterController Enemy;
     TurretHealthManager TurretHealthManagerCast;
     public float speed = 6f;
@@ -23,7 +24,9 @@ public class EnemyController : MonoBehaviour {
         Enemy = GetComponent<CharacterController>();
         Player = GameObject.FindGameObjectWithTag("Player");
         Nexus = GameObject.FindGameObjectWithTag("Nexus");
+        NexusControllerCast = Nexus.GetComponent<NexusController>();
         curAttackTime = attackTime;
+        Physics.IgnoreCollision(Enemy.GetComponent<Collider>(), Player.GetComponent<Collider>());
     }
     
     void Update() {
@@ -49,6 +52,9 @@ public class EnemyController : MonoBehaviour {
                 curAttackTime = attackTime;
             }
         }
+        //if (hit.gameObject.tag == "Nexus") {
+        //    Debug.Log("NexusHit");
+        //}
     }
 
     void ObjectiveAssignement() {

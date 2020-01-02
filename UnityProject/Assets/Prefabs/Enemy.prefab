@@ -312,6 +312,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthBar: {fileID: 0}
+  Coin: {fileID: 0}
+  RemainingEnemiesText: {fileID: 0}
   totalHealth: 1
   armor: 0.01
 --- !u!114 &5136575770559766443
@@ -329,6 +331,8 @@ MonoBehaviour:
   speed: 3
   damage: 0.1
   attackTime: 3
+  gravity: 9.8
+  fallVelocity: 0
 --- !u!65 &5136575770559766442
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -340,7 +344,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 50, y: 50, z: 50}
+  m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &5136575770559766441
 BoxCollider:

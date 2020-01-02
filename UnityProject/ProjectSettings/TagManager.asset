@@ -10,6 +10,7 @@ TagManager:
   - Bullet
   - TurretWall
   - Nexus
+  - Coin
   layers:
   - Default
   - TransparentFX

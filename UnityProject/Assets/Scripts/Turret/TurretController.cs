@@ -9,7 +9,6 @@ public class TurretController : MonoBehaviour {
 
     public float reloadTime = 0.5f;
     float curTime;
-    int layer = 0;
 
     void Start(){
         curTime = reloadTime;    

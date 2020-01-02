@@ -19,7 +19,6 @@ public class EnemyHealthController : MonoBehaviour {
     }
 
     void Update(){
-
         if (curHealth <= 0) {
             GameObject NewCoin;
             NewCoin = Instantiate(Coin, transform.position, Quaternion.identity);

@@ -31,6 +31,6 @@ public class EnemySpawner : MonoBehaviour {
         GameObject Enemy;
         Enemy = Instantiate(EnemyPrefab,transform.position,Quaternion.identity);
         Enemy.SetActive(true);
-        Physics.IgnoreCollision(Enemy.GetComponent<Collider>(), Player.GetComponent<Collider>());
+        //Physics.IgnoreCollision(Enemy.GetComponent<Collider>(), Player.GetComponent<Collider>());
     }
 }

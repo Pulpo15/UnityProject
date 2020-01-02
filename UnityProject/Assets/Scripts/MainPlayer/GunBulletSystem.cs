@@ -16,7 +16,6 @@ public class GunBulletSystem : MonoBehaviour
         Direction = GameObject.Find("Main Camera").transform.forward * velocity;
         
         BulletRB.velocity = Direction;
-        Debug.Log(transform.parent.rotation);
         gameObject.transform.parent = null;
         curTime = time;
     }
