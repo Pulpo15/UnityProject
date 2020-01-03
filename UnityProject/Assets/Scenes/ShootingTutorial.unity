@@ -591,6 +591,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8999051574569867596, guid: 0115e825f1d65a34887d8df2638a685a,
+        type: 3}
+      propertyPath: m_Text
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8999051574145191567, guid: 0115e825f1d65a34887d8df2638a685a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -651,31 +656,26 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8999051573749907352, guid: 0115e825f1d65a34887d8df2638a685a,
-        type: 3}
-      propertyPath: m_TagString
-      value: Nexus
-      objectReference: {fileID: 0}
     - target: {fileID: 8999051573249201921, guid: 0115e825f1d65a34887d8df2638a685a,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8999051574354136503, guid: 0115e825f1d65a34887d8df2638a685a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8999051574569867596, guid: 0115e825f1d65a34887d8df2638a685a,
-        type: 3}
-      propertyPath: m_Text
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8999051573280548769, guid: 0115e825f1d65a34887d8df2638a685a,
         type: 3}
       propertyPath: BulletPrefab
       value: 
       objectReference: {fileID: 670495241}
+    - target: {fileID: 8999051573749907352, guid: 0115e825f1d65a34887d8df2638a685a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Nexus
+      objectReference: {fileID: 0}
+    - target: {fileID: 8999051574354136503, guid: 0115e825f1d65a34887d8df2638a685a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0115e825f1d65a34887d8df2638a685a, type: 3}
 --- !u!1 &1684183608 stripped
@@ -980,7 +980,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2030806923}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.1, z: -3.306}
+  m_LocalPosition: {x: 0, y: -0.24, z: -3.306}
   m_LocalScale: {x: 53.836094, y: 1, z: 241.88785}
   m_Children: []
   m_Father: {fileID: 0}

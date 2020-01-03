@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class TurretTutorial : MonoBehaviour {
 
     public Text TutorialText;
+    public Text RemainingEnemies;
+    public int intRemainingEnemies;
     public GameObject EnemyPrefab;
     bool placeTurret;
     bool killEnemy;
@@ -15,6 +17,7 @@ public class TurretTutorial : MonoBehaviour {
     float time = 1;
     public float curTime;
     int enemy = 0;
+    bool catchedCoin;
 
     void Start() {
         TutorialText.text = "Approach to the Turret Socket and point towards it. If you have enough money Left Click it to place the Turret";
@@ -43,6 +46,10 @@ public class TurretTutorial : MonoBehaviour {
                 enemy++;
             }
         }
+        intRemainingEnemies = int.Parse(RemainingEnemies.text);
+        if (intRemainingEnemies <= 0) {
+            SceneManager.LoadScene(3);
+        }
     }
 
     void InstantiateEnemies() {
@@ -52,10 +59,11 @@ public class TurretTutorial : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.gameObject.tag == "Coin") {
+        if (other.gameObject.tag == "Coin" && !catchedCoin) {
             Debug.Log("asd");
             TutorialText.text = "Now approach to the other Turret Socket and buy the other turret";
             placeNewTurret = true;
+            catchedCoin = true;
         }
     }
 }

@@ -10,15 +10,16 @@ public class EnemyController : MonoBehaviour {
     NexusController NexusControllerCast;
     CharacterController Enemy;
     TurretHealthManager TurretHealthManagerCast;
+
     public float speed = 6f;
     public float damage;
     public float attackTime;
     float curAttackTime;
 
-    public float gravity = 9.8f;
-    public float fallVelocity = 0;
+    //public float gravity = 9.8f;
+    //public float fallVelocity = 0;
 
-    //Vector3 move;
+
 
     void Start() {
         Enemy = GetComponent<CharacterController>();
@@ -52,9 +53,6 @@ public class EnemyController : MonoBehaviour {
                 curAttackTime = attackTime;
             }
         }
-        //if (hit.gameObject.tag == "Nexus") {
-        //    Debug.Log("NexusHit");
-        //}
     }
 
     void ObjectiveAssignement() {
@@ -67,15 +65,4 @@ public class EnemyController : MonoBehaviour {
             Enemy.Move(transform.forward * speed * Time.deltaTime);
         }
     }
-
-    //void SetGravity() {
-    //    if (Enemy.isGrounded) {
-    //        fallVelocity = -gravity * Time.deltaTime;
-    //        transform.forward = fallVelocity;
-    //    }
-    //    else {
-    //        fallVelocity -= gravity * Time.deltaTime;
-    //        move.y = fallVelocity;
-    //    }
-    //}
 }
