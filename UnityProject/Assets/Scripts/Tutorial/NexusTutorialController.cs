@@ -8,24 +8,26 @@ public class NexusTutorialController : MonoBehaviour
 {
     public Slider HPBar;
     public Text RemainingEnemies;
+    public Light NexusLight;
     public float HP;
     int layer = 0;
     int remainingEnemies;
-    Scene CurScene;
+
 
     float time = 5f;
     float curTime;
 
     void Start() {
         HPBar = GameObject.FindObjectOfType<Slider>();
-        CurScene = SceneManager.GetActiveScene();
         curTime = time;
+        NexusLight = gameObject.GetComponent<Light>();
     }
 
     void Update() {
         if (HP <= 0) {
             MeshRenderer NexusMesh = gameObject.GetComponent<MeshRenderer>();
             NexusMesh.enabled = false;
+            NexusLight.enabled = false;
             if (HPBar != null)
                 Destroy(HPBar.gameObject);
             curTime -= Time.deltaTime;

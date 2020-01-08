@@ -20,21 +20,21 @@ public class TurretTutorial : MonoBehaviour {
     bool catchedCoin;
 
     void Start() {
-        TutorialText.text = "Approach to the Turret Socket and point towards it. If you have enough money Left Click it to place the Turret";
+        TutorialText.text = "Approach to the Turret Socket and point towards it. If you have enough money Right Click it to place the Turret";
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !placeTurret) {
+        if (Input.GetKeyDown(KeyCode.Mouse1) && !placeTurret) {
             TutorialText.text = "Kill Enemies to get coins and buy some turrets (Press space to continue)";
             placeTurret = true;
         }
         if (Input.GetKeyDown(KeyCode.Space) && placeTurret == true && !killEnemy){
-            TutorialText.text = "If an enemy enters to the Turret radius it will focus to try to kill it and the turret will shoot it (Remember to use Right Click)";
+            TutorialText.text = "If an enemy enters to the Turret radius it will focus to try to kill it and the turret will shoot it (Remember to use Left Click)";
             GameObject Enemy = Instantiate(EnemyPrefab);
             Enemy.SetActive(true);
             killEnemy = true;
         }
-        if (Input.GetKeyDown(KeyCode.Mouse0) && placeNewTurret == true) {
+        if (Input.GetKeyDown(KeyCode.Mouse1) && placeNewTurret == true) {
             TutorialText.text = "Kill the remaining enemies";
             remainingEnemies = true;
 

@@ -38,12 +38,12 @@ public class TextScript : MonoBehaviour {
         }
 
         if (w == true && a == true && s == true && d == true && !shootText){
-            TutorialText.text = "Pres right mouse to shoot";
+            TutorialText.text = "Press left mouse to shoot";
             movementText = true;
             shootText = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse1) && movementText == true && shootText == true && !enemyText) {
+        if (Input.GetKeyDown(KeyCode.Mouse0) && movementText == true && shootText == true && !enemyText) {
             TutorialText.text = "Shoot the enemy to kill him";
             Enemy = Instantiate(EnemyPrefab);
             Enemy.SetActive(true);
@@ -58,7 +58,6 @@ public class TextScript : MonoBehaviour {
         }
 
         if (curTime <= 0) {
-            Debug.Log("NextScene");
             SceneManager.LoadScene(2);
         }
     }

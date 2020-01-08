@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-H:/2n/Unity/Projects/Releases/03_01_2019_DemoRelease/UnityProject.exe
+H:/2n/Unity/Projects/Releases/08_01_2020_DarkerDemo/UnityProject.exe
 SceneListBegin?
 Assets/Scenes/MenuScene.unity
 Assets/Scenes/ShootingTutorial.unity
@@ -92,6 +92,7 @@ fc108ce7d98c40ac0907e8ca7f500c76 UnityEngine.UI.dll:UnityEngine.UI.Text
 0fd6822f6177297bd0eb4d83cc7a9030 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 abf1930d8126d0b2e00e9449129a0190 UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 64e54c0cbb0177c5ea26f340efb9ff85 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
+328ee1192e6f556e96b12861a2409517 Assembly-CSharp.dll:.NexusTutorial
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 06f0fef534ca4c1d6064fd77a26bf722 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 780e8f682b3221346c034a6712a0fd25 UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -132,7 +133,7 @@ b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
 019303e76b7f8f27a36a92f301621fd8 Assembly-CSharp.dll:.TurretHealthManager
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
-33c76fb90ffe27fd812a52b7cc529320 Assembly-CSharp.dll:.CoinController
+47aacbe9f04ca699d1955aebc272cb34 Assembly-CSharp.dll:.CoinController
 e6ae40841db498b6e673877ac45ad208 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 1dcb82730d983b77cec736c6ef19f814 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -147,6 +148,7 @@ e0ee4b3d4e27318934cc940a969d3d96 UnityEngine.Networking.dll:UnityEngine.Networki
 ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 9b895dcabbc1faf095c000c32d471fd0 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 5887ef1bc706b22b773d253fd443ceef UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
+d03a70cfe552134ae5007243528f4fae Assembly-CSharp.dll:.NexusTutorialController
 35a9693c388776aaf487636491a20f11 Unity.TextMeshPro.dll:TMPro.TMP_FontAsset
 e1300922cc039f41ab46a47f4cb05898 Unity.TextMeshPro.dll:TMPro.TMP_Settings
 88cc9df3c6fc697bfbeacd24c0d6f2d7 UnityEngine.TestRunner.dll:UnityEngine.TestTools.BeforeAfterTestCommandState
@@ -180,6 +182,4 @@ b48f9836631f6e06d978befd187fda4c Assembly-CSharp.dll:.EconomyManager
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
 c49b2885a1a6d98f7225e8a743d3e293 Assembly-CSharp.dll:.EnemyController
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.MenuScene
-328ee1192e6f556e96b12861a2409517 Assembly-CSharp.dll:.NexusTutorial
-1780714ee1b70e5bc4e8c87689840107 Assembly-CSharp.dll:.NexusTutorialController
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.RestartScene

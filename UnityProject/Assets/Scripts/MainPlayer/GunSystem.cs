@@ -7,7 +7,7 @@ public class GunSystem : MonoBehaviour {
     public GameObject BulletPrefab;
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Mouse1)) {
+        if (Input.GetKeyDown(KeyCode.Mouse0)) {
             GameObject Bullet;
             Bullet = Instantiate(BulletPrefab, transform.position, Quaternion.identity,gameObject.transform);
             Bullet.SetActive(true);
