@@ -11,11 +11,9 @@ public class NexusController : MonoBehaviour {
     public float HP;
     int layer = 0;
     int remainingEnemies;
-    Scene CurScene;
 
     void Start() {
-        HPBar = GameObject.FindObjectOfType<Slider>();
-        CurScene = SceneManager.GetActiveScene();
+        //HPBar = GameObject.FindObjectOfType<Slider>();
     }
 
     void Update() {

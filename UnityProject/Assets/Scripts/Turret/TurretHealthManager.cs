@@ -8,7 +8,7 @@ public class TurretHealthManager : MonoBehaviour
     public Slider HealthBar;
     public GameObject TurretSocket;
     public float totalHealth;
-    float curHealth;
+    public float curHealth;
     public float armor;
 
 
@@ -18,6 +18,8 @@ public class TurretHealthManager : MonoBehaviour
     }
 
     void Update(){
+
+        HealthBar.value = curHealth;
 
         if (curHealth <= 0) {
             GameObject NewTurretSocket = Instantiate(TurretSocket, new Vector3(gameObject.transform.position.x, gameObject.transform.position.y -1f, 
