@@ -18,9 +18,10 @@ public class NexusTutorialController : MonoBehaviour
     float curTime;
 
     void Start() {
-        HPBar = GameObject.FindObjectOfType<Slider>();
+        //HPBar = GameObject.FindObjectOfType<Slider>();
         curTime = time;
         NexusLight = gameObject.GetComponent<Light>();
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update() {

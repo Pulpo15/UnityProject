@@ -13,17 +13,17 @@ public class NexusTutorial : MonoBehaviour {
     bool enemySpawned;
 
     void Start() {
-        TutorialText.text = "This is your Nexus, you have to defend it from the enemies, if they get to it they will explode by damaging it. If the Nexus runs out of life you will lose.(Press Space to continue)";
+        TutorialText.text = "Este es tu Núcleo, tienes que defenderlo de los enemigos, si lo alcanzan explotarán causando graves daños en el. Si el Núcleo se queda sin vida pierdes (Pulsa Espacio para continuar)";
     }
 
     void Update() {
         if (Input.GetKeyDown(KeyCode.Space) && !enemySpawned) {
-            TutorialText.text = "Kill the enemy to prevent the damage to the Nexus";
+            TutorialText.text = "Al llegar el enemigo al Núcleo lo destruirá";
             Enemy = Instantiate(EnemyPrefab);
             Enemy.SetActive(true);
             enemySpawned = true;
         }
         if (enemySpawned == true && Enemy == null) 
-            TutorialText.text = "Get ready, you will start a new game";
+            TutorialText.text = "Prepárate, empezarás una nueva partida con todo lo aprendido.";
     }
 }

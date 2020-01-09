@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour {
     public float speed = 6f;
     public float damage;
     public float attackTime;
+    public bool canBeTakenByGun = true;
     float curAttackTime;
 
     //public float gravity = 9.8f;
@@ -27,7 +28,8 @@ public class EnemyController : MonoBehaviour {
         Nexus = GameObject.FindGameObjectWithTag("Nexus");
         NexusControllerCast = Nexus.GetComponent<NexusController>();
         curAttackTime = attackTime;
-        Physics.IgnoreCollision(Enemy.GetComponent<Collider>(), Player.GetComponent<Collider>());
+        if (Player.GetComponent<Collider>() != null)
+            Physics.IgnoreCollision(Enemy.GetComponent<Collider>(), Player.GetComponent<Collider>());
     }
     
     void Update() {

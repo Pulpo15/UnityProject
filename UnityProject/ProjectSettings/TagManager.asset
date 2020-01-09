@@ -11,6 +11,8 @@ TagManager:
   - TurretWall
   - Nexus
   - Coin
+  - SlowBullet
+  - HealBullet
   layers:
   - Default
   - TransparentFX

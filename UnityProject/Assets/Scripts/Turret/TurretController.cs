@@ -6,9 +6,15 @@ public class TurretController : MonoBehaviour {
 
     public GameObject BulletPrefab;
     public GameObject Enemy;
+    Rigidbody SlowBullet;
+    Rigidbody HealBullet;
+    bool layerToZero;
 
     public float reloadTime = 0.5f;
     float curTime;
+
+    int layer;
+    int healLayer;
 
     void Start(){
         curTime = reloadTime;    
@@ -16,6 +22,13 @@ public class TurretController : MonoBehaviour {
 
     void Update() {
         curTime -= Time.deltaTime;
+        if (SlowBullet != null && SlowBullet.velocity == new Vector3(0,0,0)) {
+            layer = 0;
+            layerToZero = false;
+        }
+
+        if (HealBullet == null)
+            healLayer = 0;
     }
 
     private void OnTriggerStay(Collider other) {
@@ -33,7 +46,30 @@ public class TurretController : MonoBehaviour {
         }
     }
 
-    private void OnTriggerEnter(Collider other) {
+    private void OnTriggerEnter(Collider collision) {
+        if (collision.gameObject.tag == "SlowBullet"){
+            SlowBullet = collision.gameObject.GetComponentInParent<Rigidbody>();
+            layer++;
+            if (layer == 2) {
+                SlowBullet.velocity = new Vector3(0, 0, 0);
+                layerToZero = true;
+            }
+        }
+        if (collision.gameObject.tag == "HealBullet") {
+            HealBullet = collision.gameObject.GetComponent<Rigidbody>();
+            healLayer++;
+            if (healLayer == 2) {
+                gameObject.GetComponent<TurretHealthManager>().curHealth += 15f;
+                if (gameObject.GetComponent<TurretHealthManager>().curHealth >= 1)
+                    gameObject.GetComponent<TurretHealthManager>().curHealth = 1;
+                Destroy(collision.gameObject);
+            }
 
+        }
+    }
+
+    private void OnTriggerExit(Collider other) {
+        if (other.gameObject.tag == "SlowBullet")
+            layer = 0;
     }
 }

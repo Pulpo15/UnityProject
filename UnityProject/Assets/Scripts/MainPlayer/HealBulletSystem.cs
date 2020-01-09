@@ -32,15 +32,15 @@ public class HealBulletSystem : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.gameObject.tag == "PermanentTurret") {
-            if (layer > 2) {
-                Turret = other.gameObject.GetComponent<TurretHealthManager>();
-                Turret.curHealth += 0.15f;
-                if (Turret.curHealth >= 1)
-                    Turret.curHealth = 1;
-                Destroy(gameObject);
-            }
-            layer++;
-        }
+        //if (other.gameObject.tag == "PermanentTurret") {
+        //    Turret = other.gameObject.GetComponent<TurretHealthManager>();
+        //    if (layer > 2) {
+        //        Turret.curHealth += 0.15f;
+        //        if (Turret.curHealth >= 1)
+        //            Turret.curHealth = 1;
+        //        Destroy(gameObject);
+        //    }
+        //    layer++;
+        //}
     }
 }

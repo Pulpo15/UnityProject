@@ -8,12 +8,14 @@ public class EnemySpawner : MonoBehaviour {
     public float time;
     float curTime;
     public int enemysPerRound;
+    public int publicEnemiesPerRound;
     public Text RemainingEnemysText;
     public GameObject Player;
 
     void Start() {
         curTime = time;
         RemainingEnemysText.text = enemysPerRound.ToString();
+        publicEnemiesPerRound = enemysPerRound;
     }
 
     void Update() {

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3670159291044769621
+--- !u!1 &2708269828670094580
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,13 +8,13 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3670159291044769617}
-  - component: {fileID: 3670159291044769622}
-  - component: {fileID: 3670159291044769623}
-  - component: {fileID: 3670159291044769620}
-  - component: {fileID: 3670159291044769616}
-  - component: {fileID: 3670159291044769618}
-  - component: {fileID: 3670159291044769619}
+  - component: {fileID: 2708269828670094576}
+  - component: {fileID: 2708269828670094583}
+  - component: {fileID: 2708269828670094582}
+  - component: {fileID: 2708269828670094581}
+  - component: {fileID: 2708269828670094577}
+  - component: {fileID: 2708269828670094579}
+  - component: {fileID: 2708269828670094578}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Coin
@@ -22,13 +22,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!4 &3670159291044769617
+--- !u!4 &2708269828670094576
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3670159291044769621}
+  m_GameObject: {fileID: 2708269828670094580}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -17.48, y: 0.245, z: 14.33}
   m_LocalScale: {x: 0.5, y: 0.09961151, z: 0.5}
@@ -36,21 +36,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3670159291044769622
+--- !u!33 &2708269828670094583
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3670159291044769621}
+  m_GameObject: {fileID: 2708269828670094580}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &3670159291044769623
+--- !u!23 &2708269828670094582
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3670159291044769621}
+  m_GameObject: {fileID: 2708269828670094580}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -81,13 +81,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &3670159291044769620
+--- !u!136 &2708269828670094581
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3670159291044769621}
+  m_GameObject: {fileID: 2708269828670094580}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
@@ -95,13 +95,13 @@ CapsuleCollider:
   m_Height: 5.0195017
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: -0.000027225884, z: -0.00000011920929}
---- !u!114 &3670159291044769616
+--- !u!114 &2708269828670094577
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3670159291044769621}
+  m_GameObject: {fileID: 2708269828670094580}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f634c0598aa02154c924cdd95d7176a4, type: 3}
@@ -110,13 +110,13 @@ MonoBehaviour:
   Player: {fileID: 0}
   Particles: {fileID: 0}
   coinValue: 20
---- !u!198 &3670159291044769618
+--- !u!198 &2708269828670094579
 ParticleSystem:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3670159291044769621}
+  m_GameObject: {fileID: 2708269828670094580}
   serializedVersion: 6
   lengthInSec: 2
   simulationSpeed: 1
@@ -4714,14 +4714,14 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!199 &3670159291044769619
+--- !u!199 &2708269828670094578
 ParticleSystemRenderer:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3670159291044769621}
+  m_GameObject: {fileID: 2708269828670094580}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0

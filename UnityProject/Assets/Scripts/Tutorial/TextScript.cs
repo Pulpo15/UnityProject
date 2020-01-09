@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class TextScript : MonoBehaviour {
 
     public GameObject EnemyPrefab;
+    public EnemySpawner SpawnerEnemy;
     GameObject Enemy;
     public Text TutorialText;
     bool movementText;
@@ -19,7 +20,7 @@ public class TextScript : MonoBehaviour {
     float curTime;
 
     void Start() {
-        TutorialText.text = "Press W,A,S,D to move";
+        TutorialText.text = "Pulsa W, A, S y D para moverte";
         curTime = time;
     }
 
@@ -38,26 +39,19 @@ public class TextScript : MonoBehaviour {
         }
 
         if (w == true && a == true && s == true && d == true && !shootText){
-            TutorialText.text = "Press left mouse to shoot";
+            TutorialText.text = "Manten pulsado el Click izquierdo para cargar tu ataque. Dependiendo de la carga la esfera será más grande pero tardará más en estar disponible de nuevo";
             movementText = true;
             shootText = true;
         }
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && movementText == true && shootText == true && !enemyText) {
-            TutorialText.text = "Shoot the enemy to kill him";
-            Enemy = Instantiate(EnemyPrefab);
-            Enemy.SetActive(true);
+            TutorialText.text = "Tus balas no afectan a la vida del enemigo, en este caso solo realentizas su paso ¡Cuidado!, Si la esfera interior no colisiona con el enemigo esta no se parará (Pulsa Espacio cuando estés listo)";
+            SpawnerEnemy.gameObject.SetActive(true);
+            //Enemy = Instantiate(EnemyPrefab);
+            //Enemy.SetActive(true);
             enemyText = true;
         }
-        if (Enemy == null && enemyText == true) {
-            TutorialText.text = "Take the coin to earn money";
-            nextScene = true;
-        }
-        if (nextScene == true) {
-            curTime -= Time.deltaTime;
-        }
-
-        if (curTime <= 0) {
+        if (Input.GetKeyDown(KeyCode.Space) && enemyText == true) {
             SceneManager.LoadScene(2);
         }
     }

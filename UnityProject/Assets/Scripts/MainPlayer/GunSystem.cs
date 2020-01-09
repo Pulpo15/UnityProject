@@ -38,7 +38,7 @@ public class GunSystem : MonoBehaviour {
 
         CDBar.value = curTime;
 
-        if (Input.GetKeyDown(KeyCode.Alpha1) && curTime <= 0/* && !isShooting*/) {
+        if (Input.GetKeyDown(KeyCode.Alpha1) && curTime <= 0 && !slowShoot/* && !isShooting*/) {
             slowShoot = true;
             healShoot = false;
             curTime = time;
@@ -46,7 +46,7 @@ public class GunSystem : MonoBehaviour {
             chargingValue = 0;
             temp = 0;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2) && curTime <= 0/* && !isShooting*/) {
+        if (Input.GetKeyDown(KeyCode.Alpha2) && curTime <= 0 && !healShoot/* && !isShooting*/) {
             slowShoot = false;
             healShoot = true;
             curTime = time;

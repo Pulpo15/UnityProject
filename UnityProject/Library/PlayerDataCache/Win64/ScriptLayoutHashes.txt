@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-H:/2n/Unity/Projects/Releases/08_01_2020_DarkerDemo/UnityProject.exe
+H:/2n/Unity/Projects/Releases/VIOD-Gomar_Pol-VS-UNITY-SnailsTower/UnityProject.exe
 SceneListBegin?
 Assets/Scenes/MenuScene.unity
 Assets/Scenes/ShootingTutorial.unity
@@ -8,8 +8,9 @@ Assets/Scenes/TurretTutorial.unity
 Assets/Scenes/NexusTutorial.unity
 Assets/Scenes/SampleScene.unity
 Assets/Scenes/RestartScene.unity
+Assets/Scenes/CreditsScene.unity
 SceneListEnd?
-a02c1798ec9fe790e21b37fe0782acef Assembly-CSharp.dll:.EnemySpawner
+489f97444a7c13ef35aee78d7c21bbce Assembly-CSharp.dll:.EnemySpawner
 984dcc0ba3707b7691fbdca8ff508d28 Unity.TextMeshPro.dll:TMPro.TMP_SelectionCaret
 01aa15e337e3a9c62f15153dfac6d589 Unity.TextMeshPro.dll:TMPro.TMP_Dropdown
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
@@ -125,13 +126,13 @@ d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.Spa
 303ad70ce203ad874efe2965d0fbcff9 Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsEventTracker
 7fb9de8dcf73854b6b328eca1f7a6e6d Unity.Analytics.Tracker.dll:UnityEngine.Analytics.AnalyticsTracker
 b8a5e8091ab0b8861d2add371082c5e0 Unity.TextMeshPro.dll:TMPro.TMP_SpriteAsset
-386eff7dc3d6cd3b792cbf7d9d9668a4 Assembly-CSharp.dll:.GunSystem
+19c6c688290713c4024f629f593cba5c Assembly-CSharp.dll:.GunSystem
 cb61b3d480b93c45dcbe8c5bd8fe2aae Assembly-CSharp.dll:.BulletController
 b3ab2106268377ffe25dd18ac23dca28 Unity.TextMeshPro.dll:TMPro.TMP_Asset
-160f8ec989a98583444ff67ecfcf0bdf Assembly-CSharp.dll:.GunBulletSystem
+e0f5aefac4f7352af8e36090f1625b01 Assembly-CSharp.dll:.GunBulletSystem
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.Analytics.Editor.dll:UnityEditor.Analytics.AnalyticsEventTrackerEditor
 71bb6a6b6c8f052f948db64c7dd3ca4f Unity.TextMeshPro.dll:TMPro.TMP_SpriteAnimator
-019303e76b7f8f27a36a92f301621fd8 Assembly-CSharp.dll:.TurretHealthManager
+5117765dddf04d77c2e431d57fe3df25 Assembly-CSharp.dll:.TurretHealthManager
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
 47aacbe9f04ca699d1955aebc272cb34 Assembly-CSharp.dll:.CoinController
 e6ae40841db498b6e673877ac45ad208 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
@@ -171,15 +172,16 @@ ee0cef6caaac8ae485bfa82f000f0f7b Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
 1780714ee1b70e5bc4e8c87689840107 Assembly-CSharp.dll:.NexusController
 5fc094978ce3e3591a7500ed380d854a Unity.Analytics.DataPrivacy.dll:UnityEngine.Analytics.DataPrivacyButton
 34296d036744d5ebb1df250f00b647c2 Assembly-CSharp.dll:.EnemyHealthController
-2447be3ac0cb9a34bfabd6d865af78db Assembly-CSharp.dll:.TextScript
+7fed01f33c090f29f1b5f607f56341a2 Assembly-CSharp.dll:.TextScript
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
+13b34036d8b74379a3a5853870afe098 Assembly-CSharp.dll:.HealBulletSystem
 d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
-4b9d24208c193b12480971ea69c4c3d1 Assembly-CSharp.dll:.TurretTutorial
+aeb36f3a76fab8a3f75adcb0e7b0068e Assembly-CSharp.dll:.TurretTutorial
 5372ed2ce39229b1ac910757999a8be2 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 3165968ba45c74472d279ba04455fccb Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
 5c13f1019d2185074936a88ff5dca5a0 Assembly-CSharp.dll:.TurretController
 b48f9836631f6e06d978befd187fda4c Assembly-CSharp.dll:.EconomyManager
 8649814970b42d345b89944b862453cc Unity.TextMeshPro.dll:TMPro.TMP_SubMesh
-c49b2885a1a6d98f7225e8a743d3e293 Assembly-CSharp.dll:.EnemyController
+9aa53e77fccd2f873392aa86d9045c60 Assembly-CSharp.dll:.EnemyController
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.MenuScene
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.RestartScene

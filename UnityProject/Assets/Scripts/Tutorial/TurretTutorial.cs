@@ -10,44 +10,70 @@ public class TurretTutorial : MonoBehaviour {
     public Text RemainingEnemies;
     public int intRemainingEnemies;
     public GameObject EnemyPrefab;
+    public EnemySpawner SpawnerEnemy;
     bool placeTurret;
     bool killEnemy;
+    bool firstEnemy;
     bool placeNewTurret;
     bool remainingEnemies;
+    bool newAmmo;
+    bool newAmmoPressed;
+    bool nextScene;
     float time = 1;
     public float curTime;
     int enemy = 0;
     bool catchedCoin;
 
     void Start() {
-        TutorialText.text = "Approach to the Turret Socket and point towards it. If you have enough money Right Click it to place the Turret";
+        TutorialText.text = "Acércate hacia la torreta y apunta hacia ella, Si tienes dinero suficiente pulsa Click derecho para comprarla";
     }
 
     void Update() {
         if (Input.GetKeyDown(KeyCode.Mouse1) && !placeTurret) {
-            TutorialText.text = "Kill Enemies to get coins and buy some turrets (Press space to continue)";
+            TutorialText.text = "Mata enemigos para conseguir sus monedas y comprar mas torretas, si tu ataque colisiona con la torreta su velocidad de disparo se verá aumentada   (Pulsa espacio para continuar)";
             placeTurret = true;
         }
-        if (Input.GetKeyDown(KeyCode.Space) && placeTurret == true && !killEnemy){
-            TutorialText.text = "If an enemy enters to the Turret radius it will focus to try to kill it and the turret will shoot it (Remember to use Left Click)";
-            GameObject Enemy = Instantiate(EnemyPrefab);
-            Enemy.SetActive(true);
+        if (Input.GetKeyDown(KeyCode.Space) && placeTurret == true && !killEnemy && !firstEnemy) {
+            TutorialText.text = "Si un enemigo entra en el radio de acción de la torreta, esta le disparará hasta matarlo o ser destruida (Acuérdate de usar el Click izquierdo)";
+            SpawnerEnemy.gameObject.SetActive(true);
             killEnemy = true;
+            //GameObject Enemy = Instantiate(EnemyPrefab);
+            //Enemy.SetActive(true);
+
+        }
+        if (killEnemy && !firstEnemy) {
+            if (SpawnerEnemy.enemysPerRound == 4) {
+                SpawnerEnemy.gameObject.SetActive(false);
+                firstEnemy = true;
+            }
         }
         if (Input.GetKeyDown(KeyCode.Mouse1) && placeNewTurret == true) {
-            TutorialText.text = "Kill the remaining enemies";
+            TutorialText.text = "Mata a los enemigos restantes";
+            SpawnerEnemy.gameObject.SetActive(true);
             remainingEnemies = true;
 
         }
         if (remainingEnemies == true) {
             curTime -= Time.deltaTime;
-            if (curTime <= 0 && enemy <= 3) {
-                InstantiateEnemies();
-                enemy++;
-            }
+            //if (curTime <= 0 && enemy <= 3) {
+            //    InstantiateEnemies();
+            //    enemy++;
+            //}
         }
         intRemainingEnemies = int.Parse(RemainingEnemies.text);
-        if (intRemainingEnemies <= 0) {
+        if (intRemainingEnemies <= 0 && !newAmmo) {
+            TutorialText.text = "Pulsa 2 para cambiar el tipo de munición";
+            newAmmo = true;
+        }
+        if (newAmmo && Input.GetKeyDown(KeyCode.Alpha2) && !newAmmoPressed) {
+            TutorialText.text = "Esta nueva munición cura una pequeña porción de la vida de la torreta (Click izquierdo para usarla)";
+            newAmmoPressed = true;
+        }
+        if (Input.GetKeyDown(KeyCode.Mouse0) && newAmmoPressed && !nextScene) {
+            TutorialText.text = "Puedes cambiar entre la munición disponible pulsando 1 o 2(Pulsa espacio para continuar)";
+            nextScene = true;
+        }
+        if (Input.GetKeyDown(KeyCode.Space) && nextScene) {
             SceneManager.LoadScene(3);
         }
     }
@@ -60,8 +86,7 @@ public class TurretTutorial : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Coin" && !catchedCoin) {
-            Debug.Log("asd");
-            TutorialText.text = "Now approach to the other Turret Socket and buy the other turret";
+            TutorialText.text = "Ahora acércate a la otra torreta y compra una nueva";
             placeNewTurret = true;
             catchedCoin = true;
         }
