@@ -13,6 +13,7 @@ TagManager:
   - Coin
   - SlowBullet
   - HealBullet
+  - TurretColliderForBullets
   layers:
   - Default
   - TransparentFX

@@ -1298,6 +1298,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurretSlot
       objectReference: {fileID: 0}
+    - target: {fileID: 2568958862029158311, guid: ce0a25ab71286ac4c8fc4af27b299725,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9616b511642fc574ea4381917b9f2882, type: 2}
     - target: {fileID: 2568958862029158305, guid: ce0a25ab71286ac4c8fc4af27b299725,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1353,11 +1358,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2568958862029158311, guid: ce0a25ab71286ac4c8fc4af27b299725,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 9616b511642fc574ea4381917b9f2882, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce0a25ab71286ac4c8fc4af27b299725, type: 3}
 --- !u!1 &2041444311
@@ -1481,6 +1481,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 514188256171586655, guid: 247854162ecb04b4fbbc496cf9e241b5,
+        type: 3}
+      propertyPath: EnemyPrefab
+      value: 
+      objectReference: {fileID: 1513481059}
+    - target: {fileID: 514188256171586655, guid: 247854162ecb04b4fbbc496cf9e241b5,
+        type: 3}
+      propertyPath: RemainingEnemysText
+      value: 
+      objectReference: {fileID: 1472124001}
+    - target: {fileID: 514188256171586655, guid: 247854162ecb04b4fbbc496cf9e241b5,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 2119091105}
     - target: {fileID: 514188256171586650, guid: 247854162ecb04b4fbbc496cf9e241b5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1536,21 +1551,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 514188256171586655, guid: 247854162ecb04b4fbbc496cf9e241b5,
-        type: 3}
-      propertyPath: EnemyPrefab
-      value: 
-      objectReference: {fileID: 1513481059}
-    - target: {fileID: 514188256171586655, guid: 247854162ecb04b4fbbc496cf9e241b5,
-        type: 3}
-      propertyPath: RemainingEnemysText
-      value: 
-      objectReference: {fileID: 1472124001}
-    - target: {fileID: 514188256171586655, guid: 247854162ecb04b4fbbc496cf9e241b5,
-        type: 3}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 2119091105}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 247854162ecb04b4fbbc496cf9e241b5, type: 3}
 --- !u!1 &1308557213233071641 stripped
@@ -2218,21 +2218,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6448807599701934119, guid: ef9634cadbea75d4f9b806dbdb94b0f0,
-        type: 3}
-      propertyPath: TemporallyTurretPrefab
-      value: 
-      objectReference: {fileID: 1193051833}
-    - target: {fileID: 6448807599701934119, guid: ef9634cadbea75d4f9b806dbdb94b0f0,
-        type: 3}
-      propertyPath: PermanentTurretPrefab
-      value: 
-      objectReference: {fileID: 1681568284}
-    - target: {fileID: 6448807599701934116, guid: ef9634cadbea75d4f9b806dbdb94b0f0,
-        type: 3}
-      propertyPath: money
-      value: 100
-      objectReference: {fileID: 0}
     - target: {fileID: 6448807600417577389, guid: ef9634cadbea75d4f9b806dbdb94b0f0,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -2268,6 +2253,21 @@ PrefabInstance:
       propertyPath: HealBulletPrefab
       value: 
       objectReference: {fileID: 1308557213233071641}
+    - target: {fileID: 6448807599701934119, guid: ef9634cadbea75d4f9b806dbdb94b0f0,
+        type: 3}
+      propertyPath: TemporallyTurretPrefab
+      value: 
+      objectReference: {fileID: 1193051833}
+    - target: {fileID: 6448807599701934119, guid: ef9634cadbea75d4f9b806dbdb94b0f0,
+        type: 3}
+      propertyPath: PermanentTurretPrefab
+      value: 
+      objectReference: {fileID: 1681568284}
+    - target: {fileID: 6448807599701934116, guid: ef9634cadbea75d4f9b806dbdb94b0f0,
+        type: 3}
+      propertyPath: money
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef9634cadbea75d4f9b806dbdb94b0f0, type: 3}
 --- !u!1 &7807871366444049973 stripped
