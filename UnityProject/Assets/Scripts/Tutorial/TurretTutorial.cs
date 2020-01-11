@@ -33,7 +33,7 @@ public class TurretTutorial : MonoBehaviour {
             TutorialText.text = "Mata enemigos para conseguir sus monedas y comprar mas torretas, si tu ataque colisiona con la torreta su velocidad de disparo se verá aumentada   (Pulsa espacio para continuar)";
             placeTurret = true;
         }
-        if (Input.GetKeyDown(KeyCode.Space) && placeTurret == true && !killEnemy && !firstEnemy) {
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("JoyX") && placeTurret == true && !killEnemy && !firstEnemy) {
             TutorialText.text = "Si un enemigo entra en el radio de acción de la torreta, esta le disparará hasta matarlo o ser destruida (Acuérdate de usar el Click izquierdo)";
             SpawnerEnemy.gameObject.SetActive(true);
             killEnemy = true;
@@ -73,7 +73,7 @@ public class TurretTutorial : MonoBehaviour {
             TutorialText.text = "Puedes cambiar entre la munición disponible pulsando 1 o 2(Pulsa espacio para continuar)";
             nextScene = true;
         }
-        if (Input.GetKeyDown(KeyCode.Space) && nextScene) {
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("JoyX") && nextScene) {
             SceneManager.LoadScene(3);
         }
     }

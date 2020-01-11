@@ -15,7 +15,23 @@ public class Movement : MonoBehaviour {
 
     Vector3 move;
 
+    public bool pause = false;
+
+
     void Update() {
+
+        if (!pause)
+            Time.timeScale = 1;
+        else if (pause)
+            Time.timeScale = 0;
+        
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            if (pause)
+                pause = false;
+            else if (!pause)
+                pause = true;
+        }
+
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");

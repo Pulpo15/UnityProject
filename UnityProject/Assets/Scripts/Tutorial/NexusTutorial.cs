@@ -17,7 +17,7 @@ public class NexusTutorial : MonoBehaviour {
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Space) && !enemySpawned) {
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("JoyX") && !enemySpawned) {
             TutorialText.text = "Al llegar el enemigo al Núcleo lo destruirá";
             Enemy = Instantiate(EnemyPrefab);
             Enemy.SetActive(true);
