@@ -2163,6 +2163,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6448807599701934116, guid: ef9634cadbea75d4f9b806dbdb94b0f0,
+        type: 3}
+      propertyPath: money
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 6448807599701934115, guid: ef9634cadbea75d4f9b806dbdb94b0f0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2263,10 +2268,10 @@ PrefabInstance:
       propertyPath: PermanentTurretPrefab
       value: 
       objectReference: {fileID: 1681568284}
-    - target: {fileID: 6448807599701934116, guid: ef9634cadbea75d4f9b806dbdb94b0f0,
+    - target: {fileID: 6448807600229345747, guid: ef9634cadbea75d4f9b806dbdb94b0f0,
         type: 3}
-      propertyPath: money
-      value: 200
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef9634cadbea75d4f9b806dbdb94b0f0, type: 3}

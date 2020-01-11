@@ -203,6 +203,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6448807599027705824, guid: ef9634cadbea75d4f9b806dbdb94b0f0,
+        type: 3}
+      propertyPath: m_Text
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448807599701934116, guid: ef9634cadbea75d4f9b806dbdb94b0f0,
+        type: 3}
+      propertyPath: money
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6448807599701934115, guid: ef9634cadbea75d4f9b806dbdb94b0f0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -258,35 +268,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6448807599701934119, guid: ef9634cadbea75d4f9b806dbdb94b0f0,
-        type: 3}
-      propertyPath: TemporallyTurretPrefab
-      value: 
-      objectReference: {fileID: 1213641809}
-    - target: {fileID: 6448807599701934119, guid: ef9634cadbea75d4f9b806dbdb94b0f0,
-        type: 3}
-      propertyPath: PermanentTurretPrefab
-      value: 
-      objectReference: {fileID: 1918362566}
-    - target: {fileID: 6448807599701934116, guid: ef9634cadbea75d4f9b806dbdb94b0f0,
-        type: 3}
-      propertyPath: money
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 6448807599843488052, guid: ef9634cadbea75d4f9b806dbdb94b0f0,
-        type: 3}
-      propertyPath: m_TagString
-      value: Nexus
-      objectReference: {fileID: 0}
     - target: {fileID: 6448807600417577389, guid: ef9634cadbea75d4f9b806dbdb94b0f0,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6448807599027705824, guid: ef9634cadbea75d4f9b806dbdb94b0f0,
-        type: 3}
-      propertyPath: m_Text
-      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6448807599735141720, guid: ef9634cadbea75d4f9b806dbdb94b0f0,
         type: 3}
@@ -318,6 +303,26 @@ PrefabInstance:
       propertyPath: HealBulletPrefab
       value: 
       objectReference: {fileID: 933652569}
+    - target: {fileID: 6448807599701934119, guid: ef9634cadbea75d4f9b806dbdb94b0f0,
+        type: 3}
+      propertyPath: TemporallyTurretPrefab
+      value: 
+      objectReference: {fileID: 1213641809}
+    - target: {fileID: 6448807599701934119, guid: ef9634cadbea75d4f9b806dbdb94b0f0,
+        type: 3}
+      propertyPath: PermanentTurretPrefab
+      value: 
+      objectReference: {fileID: 1918362566}
+    - target: {fileID: 6448807599843488052, guid: ef9634cadbea75d4f9b806dbdb94b0f0,
+        type: 3}
+      propertyPath: m_TagString
+      value: Nexus
+      objectReference: {fileID: 0}
+    - target: {fileID: 6448807600229345747, guid: ef9634cadbea75d4f9b806dbdb94b0f0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef9634cadbea75d4f9b806dbdb94b0f0, type: 3}
 --- !u!1 &482473904 stripped
@@ -391,6 +396,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 514188256171586655, guid: 247854162ecb04b4fbbc496cf9e241b5,
+        type: 3}
+      propertyPath: EnemyPrefab
+      value: 
+      objectReference: {fileID: 1974935530}
+    - target: {fileID: 514188256171586655, guid: 247854162ecb04b4fbbc496cf9e241b5,
+        type: 3}
+      propertyPath: RemainingEnemysText
+      value: 
+      objectReference: {fileID: 482473905}
+    - target: {fileID: 514188256171586655, guid: 247854162ecb04b4fbbc496cf9e241b5,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 482473904}
+    - target: {fileID: 514188256171586655, guid: 247854162ecb04b4fbbc496cf9e241b5,
+        type: 3}
+      propertyPath: enemysPerRound
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 514188256171586650, guid: 247854162ecb04b4fbbc496cf9e241b5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -445,26 +470,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 514188256171586655, guid: 247854162ecb04b4fbbc496cf9e241b5,
-        type: 3}
-      propertyPath: EnemyPrefab
-      value: 
-      objectReference: {fileID: 1974935530}
-    - target: {fileID: 514188256171586655, guid: 247854162ecb04b4fbbc496cf9e241b5,
-        type: 3}
-      propertyPath: RemainingEnemysText
-      value: 
-      objectReference: {fileID: 482473905}
-    - target: {fileID: 514188256171586655, guid: 247854162ecb04b4fbbc496cf9e241b5,
-        type: 3}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 482473904}
-    - target: {fileID: 514188256171586655, guid: 247854162ecb04b4fbbc496cf9e241b5,
-        type: 3}
-      propertyPath: enemysPerRound
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 247854162ecb04b4fbbc496cf9e241b5, type: 3}
@@ -1409,6 +1414,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5808215280319978589, guid: d47ebc8bb9acd6c408a68b692627b23f,
+        type: 3}
+      propertyPath: BulletPrefab
+      value: 
+      objectReference: {fileID: 667648880}
     - target: {fileID: 5808215280319978593, guid: d47ebc8bb9acd6c408a68b692627b23f,
         type: 3}
       propertyPath: m_IsTrigger
@@ -1419,11 +1429,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5808215280319978589, guid: d47ebc8bb9acd6c408a68b692627b23f,
-        type: 3}
-      propertyPath: BulletPrefab
-      value: 
-      objectReference: {fileID: 667648880}
     - target: {fileID: 5808215281425547543, guid: d47ebc8bb9acd6c408a68b692627b23f,
         type: 3}
       propertyPath: m_AnchorMax.x

@@ -47,7 +47,7 @@ public class PlaceTurret : MonoBehaviour
 
                 }
 
-                if (Input.GetKey(KeyCode.Mouse1) && !permanentTurretOn && Economy.money >= cost) {
+                if (Input.GetKey(KeyCode.Mouse1) || Input.GetAxis("PlaceTurret") == 1 && !permanentTurretOn && Economy.money >= cost) {
                     permanentTurretOn = true;
                     Vector3 TurretPosition = TurretSocket.TurretSocket.transform.position;
 

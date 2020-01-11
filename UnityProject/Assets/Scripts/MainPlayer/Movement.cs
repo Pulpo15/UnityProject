@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour {
     }
 
     public CharacterController Player;
-    public float speed = 12f;
+    public float speed = 0f;
 
     public float gravity = 9.8f;
     public float fallVelocity = 0;
@@ -20,7 +20,10 @@ public class Movement : MonoBehaviour {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-         move = transform.right * x + transform.forward * z;
+        //float x = Input.GetAxis("HJoy");
+        //float z = Input.GetAxis("VJoy");
+
+        move = transform.right * x + transform.forward * z;
 
         SetGravity();
 

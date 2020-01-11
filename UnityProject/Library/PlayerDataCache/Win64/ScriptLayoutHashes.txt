@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-H:/2n/Unity/Projects/Releases/VIOD-Gomar_Pol-VS-UNITY-SnailsTower/UnityProject.exe
+H:/2n/Unity/Projects/Releases/JoyStick Test/UnityProject.exe
 SceneListBegin?
 Assets/Scenes/MenuScene.unity
 Assets/Scenes/ShootingTutorial.unity

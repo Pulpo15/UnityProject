@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Rotation : MonoBehaviour {
 
+    
+
     public float mouseSensitivity = 100f;
+    float joystickSensitivty = 1000f;
 
     public Transform PlayerBody;
 
@@ -17,8 +20,21 @@ public class Rotation : MonoBehaviour {
 
     void Update() {
 
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        //string[] joysticks = Input.GetJoystickNames();
+        float mouseX;
+        float mouseY;
+
+        Debug.Log(Input.GetJoystickNames().Length);
+
+        if (Input.GetJoystickNames().Length == 0) {
+            mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+            mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        }
+        else {
+            mouseX = Input.GetAxis("HCam") * joystickSensitivty * Time.deltaTime;
+            mouseY = Input.GetAxis("VCam") * joystickSensitivty * Time.deltaTime;
+            //https://www.reddit.com/r/Unity3D/comments/1syswe/ps4_controller_map_for_unity/
+        }
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
