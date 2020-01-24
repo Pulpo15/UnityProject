@@ -17,8 +17,6 @@ public class GunSystem : MonoBehaviour {
     bool isShooting;
     bool slowShoot;
     bool healShoot;
-    bool joyShoot;
-
     float chargingValue;
     float temp;
 
@@ -40,7 +38,7 @@ public class GunSystem : MonoBehaviour {
 
         CDBar.value = curTime;
 
-        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButtonDown("ChangeShoot") && curTime <= 0 && !slowShoot/* && !isShooting*/) {
+        if (Input.GetKeyDown(KeyCode.Alpha1) && curTime <= 0 && !slowShoot/* && !isShooting*/) {
             slowShoot = true;
             healShoot = false;
             curTime = time;
@@ -48,7 +46,7 @@ public class GunSystem : MonoBehaviour {
             chargingValue = 0;
             temp = 0;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButtonDown("ChangeShoot") && curTime <= 0 && !healShoot/* && !isShooting*/) {
+        if (Input.GetKeyDown(KeyCode.Alpha2) && curTime <= 0 && !healShoot/* && !isShooting*/) {
             slowShoot = false;
             healShoot = true;
             curTime = time;
@@ -65,7 +63,7 @@ public class GunSystem : MonoBehaviour {
     void HealShoot() {
         SlowImage.color = Color.white;
         HealImage.color = Color.black;
-        if (Input.GetKeyDown(KeyCode.Mouse0) || Input.GetAxis("Shoot") == 1 && temp <= 0) {
+        if (Input.GetKeyDown(KeyCode.Mouse0) && temp <= 0) {
 
             GameObject Bullet;
             Bullet = Instantiate(HealBulletPrefab, transform.position, Quaternion.identity, gameObject.transform);
@@ -95,10 +93,10 @@ public class GunSystem : MonoBehaviour {
     void SlowShoot() {
         SlowImage.color = Color.black;
         HealImage.color = Color.white;
-        if (Input.GetKey(KeyCode.Mouse0) || Input.GetAxis("Shoot") > -1 && temp <= 0) {
+
+        if (Input.GetKey(KeyCode.Mouse0) && temp <= 0) {
 
             isShooting = true;
-            joyShoot = true;
             ChargingBar.gameObject.SetActive(true);
 
             if (chargingValue <= 1f)
@@ -107,14 +105,12 @@ public class GunSystem : MonoBehaviour {
             ChargingBar.value = chargingValue;
 
         }
-        else if (Input.GetKeyUp(KeyCode.Mouse0) || Input.GetAxis("Shoot") == -1 && joyShoot && temp <= 0 && !shoot) {
+        else if (Input.GetKeyUp(KeyCode.Mouse0) && temp <= 0) {
 
             GameObject Bullet;
             Bullet = Instantiate(BulletPrefab, transform.position, Quaternion.identity,gameObject.transform);
             Bullet.transform.localScale = new Vector3(Bullet.transform.localScale.x * chargingValue * 70, Bullet.transform.localScale.y * chargingValue * 70, Bullet.transform.localScale.z * chargingValue * 70);
             Bullet.SetActive(true);
-
-            joyShoot = false;
 
             if (chargingValue <= 0.25f)
                 chargingValue = 0.25f;

@@ -51,7 +51,7 @@ public class TextScript : MonoBehaviour {
             //Enemy.SetActive(true);
             enemyText = true;
         }
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("JoyX") && enemyText == true) {
+        if (Input.GetKeyDown(KeyCode.Space) && enemyText == true) {
             SceneManager.LoadScene(2);
         }
     }
