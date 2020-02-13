@@ -4,67 +4,47 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour {
 
-    GameObject Turret;
+
     GameObject Player;
-    GameObject Nexus;
-    NexusController NexusControllerCast;
     CharacterController Enemy;
-    TurretHealthManager TurretHealthManagerCast;
 
     public float speed = 6f;
-    public float damage;
-    public float attackTime;
+    
+    private Transform target;
+    private int wavePointIndex = 0;
+    
     public bool canBeTakenByGun = true;
-    float curAttackTime;
-
-    //public float gravity = 9.8f;
-    //public float fallVelocity = 0;
-
 
 
     void Start() {
+        target = Waypoints.points[0];
+
         Enemy = GetComponent<CharacterController>();
         Player = GameObject.FindGameObjectWithTag("Player");
-        Nexus = GameObject.FindGameObjectWithTag("Nexus");
-        NexusControllerCast = Nexus.GetComponent<NexusController>();
-        curAttackTime = attackTime;
+
         if (Player.GetComponent<Collider>() != null)
             Physics.IgnoreCollision(Enemy.GetComponent<Collider>(), Player.GetComponent<Collider>());
     }
     
     void Update() {
-        ObjectiveAssignement();
-        curAttackTime -= Time.deltaTime;
-        transform.position = new Vector3(transform.position.x, 1, transform.position.z);
-        transform.rotation = new Quaternion(0, 0, 0, 0);
+        Movement();
     }
 
-    private void OnTriggerStay(Collider other) {
-        if (other.gameObject.tag == "PermanentTurret") {
-            if (Turret == null) {
-                Turret = GameObject.Find("PermanentTurret(Clone)");
-                TurretHealthManagerCast = Turret.GetComponent<TurretHealthManager>();
-            }
+    void Movement() {
+        Vector3 direction = target.position - transform.position;
+        transform.Translate(direction.normalized * speed * Time.deltaTime, Space.World);
+
+        if (Vector3.Distance(transform.position, target.position) <= 0.4f) {
+            GetNextWaypoint();
         }
     }
 
-    private void OnControllerColliderHit(ControllerColliderHit hit) {
-        if (hit.gameObject.tag == "TurretWall") {
-            if (curAttackTime <= 0 && Turret != null) {
-                TurretHealthManagerCast.HealthUpdate(damage);
-                curAttackTime = attackTime;
-            }
+    void GetNextWaypoint() {
+        if (wavePointIndex >= Waypoints.points.Length - 1) {
+            Destroy(gameObject);
         }
-    }
 
-    void ObjectiveAssignement() {
-        if (Turret != null) {
-            transform.LookAt(new Vector3 (Turret.transform.position.x, Turret.transform.position.y - 2.4f, Turret.transform.position.z));
-            Enemy.Move(transform.forward * speed * Time.deltaTime);
-        }
-        else if (Turret == null) {
-            transform.LookAt(Nexus.transform);
-            Enemy.Move(transform.forward * speed * Time.deltaTime);
-        }
+        wavePointIndex++;
+        target = Waypoints.points[wavePointIndex];
     }
 }
